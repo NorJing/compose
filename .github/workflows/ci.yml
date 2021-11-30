@@ -11,7 +11,7 @@ on:
 jobs:
   lint:
     name: Lint
-    runs-on: ubuntu-latest
+    runs-on: buildjet-2vcpu-ubuntu-1804
     env:
       GO111MODULE: "on"
     steps:
@@ -37,7 +37,7 @@ jobs:
   # only on main branch, costs too much for the gain on every PR
   validate-cross-build:
     name: Validate cross build
-    runs-on: ubuntu-latest
+    runs-on: buildjet-2vcpu-ubuntu-1804
 #    if: (github.ref == 'refs/heads/main') || (github.ref == 'refs/heads/pr1')
     env:
       GO111MODULE: "on"
@@ -63,7 +63,7 @@ jobs:
 
   build:
     name: Build
-    runs-on: ubuntu-latest
+    runs-on: buildjet-2vcpu-ubuntu-1804
     env:
       GO111MODULE: "on"
     steps:
